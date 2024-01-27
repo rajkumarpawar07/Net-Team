@@ -1,0 +1,63 @@
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/Banuba/specs.git'
+source 'https://github.com/sdk-banuba/banuba-sdk-podspecs.git'
+
+platform :ios, '14.0'
+
+# CocoaPods analytics sends network stats synchronously affecting flutter build latency.
+ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+
+project 'Runner', {
+  'Debug' => :debug,
+  'Profile' => :release,
+  'Release' => :release,
+}
+
+def flutter_root
+  generated_xcode_build_settings_path = File.expand_path(File.join('..', 'Flutter', 'Generated.xcconfig'), __FILE__)
+  unless File.exist?(generated_xcode_build_settings_path)
+    raise "#{generated_xcode_build_settings_path} must exist. If you're running pod install manually, make sure flutter pub get is executed first"
+  end
+
+  File.foreach(generated_xcode_build_settings_path) do |line|
+    matches = line.match(/FLUTTER_ROOT\=(.*)/)
+    return matches[1].strip if matches
+  end
+  raise "FLUTTER_ROOT not found in #{generated_xcode_build_settings_path}. Try deleting Generated.xcconfig, then run flutter pub get"
+end
+
+require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelper'), flutter_root)
+
+flutter_ios_podfile_setup
+
+target 'Runner' do
+  use_frameworks!
+  use_modular_headers!
+
+  sdk_version = '1.33.0'
+
+  pod 'BanubaARCloudSDK', sdk_version #optional
+  pod 'BanubaVideoEditorSDK', sdk_version
+  pod 'BanubaAudioBrowserSDK', sdk_version #optional
+  pod 'BanubaSDK', sdk_version #optional
+  pod 'BanubaSDKSimple', sdk_version
+  pod 'BanubaSDKServicing', sdk_version
+  pod 'VideoEditor', sdk_version
+  pod 'BanubaUtilities', sdk_version
+  pod 'BanubaVideoEditorGallerySDK', sdk_version #optional
+  pod 'BanubaLicenseServicingSDK', sdk_version
+
+  pod 'BNBLicenseUtils', sdk_version
+
+  pod 'VEExportSDK', sdk_version
+  pod 'VEEffectsSDK', sdk_version
+  pod 'VEPlaybackSDK', sdk_version
+
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+  end
+end
