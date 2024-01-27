@@ -1,35 +1,16 @@
-# Banuba Video Editor SDK - Flutter integration sample.
+# Net Team 
 
-## Overview
-[Banuba Video Editor SDK](https://www.banuba.com/video-editor-sdk) allows you to quickly add short video functionality and possibly AR filters and effects into your mobile app.  
-The sample demonstrates how to integrate Video Editor SDK to [Flutter](https://flutter.dev/) project.
+# Tech Stack
+- Flutter
+- Nodejs
+- MongoDB
+- Banuba Video SDK
 
-## Usage
-### License
-Before you commit to a license, you are free to test all the features of the SDK for free.  
-The trial period lasts 14 days. To start it, [send us a message](https://www.banuba.com/video-editor-sdk#form).  
-We will get back to you with the trial token.
 
-Feel free to [contact us](https://www.banuba.com/faq/kb-tickets/new) if you have any questions.
+![Net team 1](https://github.com/rajkumarpawar07/Net-Team/assets/100755016/8ff50051-9777-4715-a7a3-c990a80debb9)
+![Net team 2](https://github.com/rajkumarpawar07/Net-Team/assets/100755016/444872d2-6674-456f-91b8-1f36320ef7cf)
+![Net team 3](https://github.com/rajkumarpawar07/Net-Team/assets/100755016/6cf3ed68-3363-4d0d-a9fc-0a6b0982bbb8)
+![Net team 4](https://github.com/rajkumarpawar07/Net-Team/assets/100755016/7b96d573-4b62-4851-9782-c2cf00f2cbba)
+![Net team 5](https://github.com/rajkumarpawar07/Net-Team/assets/100755016/21929bcd-4716-4449-a30e-c4f7bbf84b7c)
+![Net team 6](https://github.com/rajkumarpawar07/Net-Team/assets/100755016/1bf45b7e-9ef7-47b8-82dd-816e4aa9ae8c)
 
-### Installation
-1. Run ```flutter pub get``` in terminal to load dependencies.
-2. Set Banuba license token [within the app](lib/main.dart#L43).
-
-### Run on Android
-1. Run ```flutter run``` in terminal to launch the sample app on a device or launch the app in IDE i.e. Intellij, VC, etc.
-2. Learn [Android quickstart](mddocs/android_integration.md) to quickly integrate Android Video Editor SDK into your Flutter project.
-
-### Run on iOS
-1. Install CocoaPods dependencies. Open **ios** directory and run ```pod install``` in terminal.
-2. Open **Signing & Capabilities** tab in Target settings and select your Development Team.
-3. Run ```flutter run``` in terminal to launch the sample on a device or launch the app in IDE i.e. XCode, Intellij, VC, etc.
-4. Learn [iOS quickstart](mddocs/ios_integration.md) to quickly integrate iOS Video Editor SDK into your Flutter project.
-
-## Dependencies
-|       | Version | 
-| --------- |:-------:| 
-| Dart      |  2.19   | 
-| Flutter   | 3.13.0  |
-| Android      |  6.0+   |
-| iOS          |  13.0+  |
